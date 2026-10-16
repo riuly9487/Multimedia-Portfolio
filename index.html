@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<header>
+  <button id="avatar" class="avatar" title="Profile picture"><img id="avatarImg" alt=""></button>
+  <h1 id="name">Your Name</h1>
+  <input id="search" type="search" placeholder="Search my work" aria-label="Search">
+  <div class="bar"><button id="addBtn" hidden>Add content</button><button id="authBtn" class="ghost">Owner login</button></div>
+</header>
+<main id="grid"></main>
+
+<dialog id="view"><button class="x" data-close aria-label="Close">×</button>
+  <div class="split"><div id="vMedia"></div>
+  <div class="info"><h2 id="vTitle"></h2><p id="vDesc"></p><div id="vTools"></div></div></div></dialog>
+
+<dialog id="edit"><form id="form">
+  <h2 id="eHead">Add content</h2>
+  <label>Heading<input id="fTitle"></label>
+  <label id="descRow">Description<textarea id="fDesc" rows="4"></textarea></label>
+  <div id="drop">Drop images or videos here, or click to choose<input id="fFiles" type="file" accept="image/*,video/*" multiple hidden></div>
+  <label>Links (images, mp4, YouTube), one per line<textarea id="fUrls" rows="2"></textarea></label>
+  <div id="chips"></div>
+  <div class="row"><button type="button" class="ghost" data-close>Cancel</button><button id="save">Save</button></div>
+</form></dialog>
+
+<dialog id="login"><form id="lform">
+  <h2>Owner login</h2>
+  <label>Email<input id="lEmail" type="email" required></label>
+  <label>Password<input id="lPass" type="password" required></label>
+  <div class="row"><button type="button" class="ghost" data-close>Cancel</button><button>Log in</button></div>
+</form></dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body></html>
